@@ -1,0 +1,48 @@
+﻿@model MissingNumberViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .input-container {
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 100px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h5 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    h6 {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+<div class="input-container">
+<form asp-action="Index" enctype="multipart/form-data">
+    <div class="text-center">
+        <h5>Podaj ciąg liczb ,który chcesz sprawdzić</h5>
+        <div class="row py-1">
+            <input asp-for="MissingNumber" placeholder="Input number..." class="form-control" />
+            <span asp-validation-for="MissingNumber" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-4">
+                <button type="submit" class="btn btn-success form-control">Create</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+@if (ViewBag.Model != null)
+{
+    <h5>Brakujące liczby to:</h5>
+    <h6>@ViewBag.Model</h6>
+}
