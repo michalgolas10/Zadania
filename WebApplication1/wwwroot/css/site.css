@@ -28,3 +28,24 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.input-container {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h6 {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}

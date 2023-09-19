@@ -14,6 +14,7 @@ namespace WebApplication1
 
             builder.Services.AddScoped<IMissingNumberService, MissingNumberService>();
             builder.Services.AddScoped<IFindHoleService, FindHoleService>();
+            builder.Services.AddScoped<IFindPositiveInt, FindPositiveInt>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

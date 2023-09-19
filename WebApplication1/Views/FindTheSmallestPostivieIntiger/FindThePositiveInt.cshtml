@@ -1,0 +1,24 @@
+﻿@model ZadaniaRekrutacyjne.Models.FindPositiveIngViewModel;
+@{
+}
+<div class="input-container">
+    <form asp-action="FindThePositiveInt" enctype="multipart/form-data">
+        <div class="text-center">
+            <h5>Podaj ciąg liczb ,aby znaleźć największą dodatnią liczbę którą nie podałeś :) oddziel liczby przecinkami</h5>
+            <div class="row py-1">
+                <input asp-for="numbersToCheck" placeholder="Input number..." class="form-control" />
+                <span asp-validation-for="numbersToCheck" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-4 offset-4">
+                    <button type="submit" class="btn btn-success form-control">Create</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    @if (ViewBag.Model != null)
+    {
+        <h5>Brakujące liczby to:</h5>
+        <h6>@ViewBag.Model</h6>
+    }
+</div>
