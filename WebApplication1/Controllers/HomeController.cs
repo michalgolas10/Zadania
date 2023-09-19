@@ -35,25 +35,6 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult MatrixTask(FindHoleViewModel model)
-        {
-            var matrixModel = new int[model.MatrixColumns,model.MatrixRows];
-            var matrixViewModel = new MatrixViewModel();
-            matrixViewModel.MatrixOfStrings = matrixModel;
-            ViewBag.NumberOfRows = model.MatrixRows;
-            ViewBag.MatrixColumns = model.MatrixColumns;
-            return View(matrixViewModel);
-        }
-        [HttpPost]
-        public IActionResult MatrixTaskComplete(MatrixViewModel model)
-        {
-            var matrixPassed = model.MatrixOfChars;
-            ViewBag.MatrixColumns = matrixPassed.GetLength(1);
-            ViewBag.MatrixRows = matrixPassed.GetLength(0);
-            ViewBag.Holes = _findHoleService.FindHole(matrixPassed);
-            return View(model);
-        }
 
         public IActionResult Privacy()
         {

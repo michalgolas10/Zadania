@@ -1,7 +1,4 @@
-﻿@model ZadaniaRekrutacyjne.Models.FindHoleViewModel
-@{
-
-}
+﻿@model ZadaniaRekrutacyjne.Models.MatrixTaskViewModel
 <style>
     .input-container {
         width: 40%;
@@ -26,17 +23,12 @@
     }
 </style>
 <div class="input-container">
-    <form asp-action="MatrixTask" enctype="multipart/form-data">
+    <form asp-action="FindHole" enctype="multipart/form-data">
         <div class="text-center">
-            <h5>Podaj liczbę kolumn macierzy</h5>
+            <h5>Podaj macierz w postaci 101,100,111,101</h5>
             <div class="row py-1">
-                <input asp-for="MatrixColumns" placeholder="Input number..." class="form-control" />
-                <span asp-validation-for="MatrixColumns" class="text-danger"></span>
-            </div>
-            <h5>Podaj liczbę wierszy macierzy</h5>
-            <div class="row py-1">
-                <input asp-for="MatrixRows" placeholder="Input number..." class="form-control" />
-                <span asp-validation-for="MatrixRows" class="text-danger"></span>
+                <input asp-for="MatrixString" placeholder="Input number..." class="form-control" />
+                <span asp-validation-for="MatrixString" class="text-danger"></span>
             </div>
             <div class="row">
                 <div class="col-4 offset-4">
@@ -45,5 +37,11 @@
             </div>
         </div>
     </form>
+@if(ViewBag.Model!=null)
+{
+@foreach(var hole in ViewBag.Model)
+{
+    <h3>@hole</h3>
+}
+}
 </div>
-
