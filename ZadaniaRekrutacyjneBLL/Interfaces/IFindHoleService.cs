@@ -8,7 +8,7 @@ namespace ZadaniaRekrutacyjneBLL.Interfaces
 {
     public interface IFindHoleService
     {
-        public List<string> FindHole(int[,] matrixofInts);
+        public List<string> FindHole(string matrixofString);
         public int[,] CreateMatrixFromString(string matrixofString);
     }
 }

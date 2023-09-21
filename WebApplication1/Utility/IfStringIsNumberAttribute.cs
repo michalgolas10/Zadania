@@ -12,7 +12,7 @@ namespace WebApplication1.Utility
                 int number;
                 if(!int.TryParse(numberString,out number)) 
                 {
-                    return new ValidationResult("Mordo to nie numer");
+                    return new ValidationResult("Thats not a correct number");
                 }
             }
             return ValidationResult.Success;

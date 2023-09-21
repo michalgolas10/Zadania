@@ -1,0 +1,22 @@
+﻿@model MissingNumberViewModel
+<div class="input-container">
+    <form asp-action="Index" enctype="multipart/form-data">
+        <div class="text-center">
+            <h5>Podaj ciąg liczb ,który chcesz sprawdzić</h5>
+            <div class="row py-1">
+                <input asp-for="MissingNumber" placeholder="Input number..." class="form-control" />
+                <span asp-validation-for="MissingNumber" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-4 offset-4">
+                    <button type="submit" class="btn btn-success form-control">Create</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    @if (ViewBag.Model != null)
+    {
+        <h5>Brakujące liczby to:</h5>
+        <h6>@ViewBag.Model</h6>
+    }
+</div>

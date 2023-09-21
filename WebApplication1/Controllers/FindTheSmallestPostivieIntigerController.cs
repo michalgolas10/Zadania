@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ZadaniaRekrutacyjne.Models;
 using ZadaniaRekrutacyjneBLL.Interfaces;
+using ZadaniaRekrutacyjneBLL.Services;
 
 namespace ZadaniaRekrutacyjne.Controllers
 {
@@ -13,14 +14,22 @@ namespace ZadaniaRekrutacyjne.Controllers
         }
         public IActionResult FindThePositiveInt()
         {
-            return View();
+                return View();
         }
         [HttpPost]
         public IActionResult FindThePositiveInt(FindPositiveIngViewModel model)
         {
-            var result = _findPositiveInt.FindPositiveIntiger(model.numbersToCheck);
-            ViewBag.Model = result;
-            return View();
+            if (ModelState.IsValid)
+            {
+                var result = _findPositiveInt.FindPositiveIntiger(model.numbersToCheck);
+                ViewBag.Model = result;
+                return View(model);
+            }
+            else
+            {
+                return View();
+            }
+            
         }
     }
 }

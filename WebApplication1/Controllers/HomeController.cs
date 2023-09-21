@@ -22,18 +22,21 @@ namespace WebApplication1.Controllers
 
         public IActionResult Index()
         {
-            return View();
+                return View();
         }
         [HttpPost]
         public IActionResult Index(MissingNumberViewModel model)
-        {
-            var s = _missingNumberService.FindMissingNumber(model.MissingNumber);
-            ViewBag.Model = s;
-            return View();
-        }
-        public IActionResult FindHole()
-        {
-            return View();
+        {   
+            if (ModelState.IsValid)
+            {
+                var missingNumbers = _missingNumberService.FindMissingNumber(model.MissingNumber);
+                ViewBag.Model = missingNumbers;
+                return View(model);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Privacy()

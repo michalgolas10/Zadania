@@ -1,7 +1,12 @@
-﻿namespace ZadaniaRekrutacyjne.Models
+﻿using System.ComponentModel.DataAnnotations;
+using WebApplication1.Utility;
+using ZadaniaRekrutacyjne.Utility;
+
+namespace ZadaniaRekrutacyjne.Models
 {
     public class MatrixTaskViewModel
     {
-        public string? MatrixString { get; set; }
+        [IfNumberSplitedString]
+        public string MatrixString { get; set; }
     }
 }
