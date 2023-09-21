@@ -12,13 +12,12 @@ namespace ZadaniaRekrutacyjne.Utility
                 if (numbersString.Contains(','))
                 {
                     var numbersStringSplited = numbersString.Split(',');
-                    var numbersIntigers = numbersStringSplited.Select(x => x.ToList());
-                    foreach (var number in numbersIntigers)
+                    foreach (var number in numbersStringSplited)
                     {
                         int outPutInt;
                         if (!int.TryParse(number.ToString(), out outPutInt))
                         {
-                            return new ValidationResult("Incorect input numbers1");
+                            return new ValidationResult("Incorect input numbers");
                         }
                     }
                             return ValidationResult.Success;
@@ -32,7 +31,7 @@ namespace ZadaniaRekrutacyjne.Utility
                     }
                     else
                     {
-                        return new ValidationResult("Incorect input number2");
+                        return new ValidationResult("Incorect input number");
                     }
                 }
             }

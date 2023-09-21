@@ -16,15 +16,17 @@ namespace ZadaniaRekrutacyjneBLL.Services
         public int[,] CreateMatrixFromString(string matrixofString)
         {
             var matrixSplited = matrixofString.Split(',');
-            var numberOfRows = matrixSplited[0].Length;
-            var numberOfColumns = matrixSplited.Length;
+            var numberOfColumns = matrixSplited[0].Length;
+            var numberOfRows = matrixSplited.Length;
             var matrixOfIntigers = new int[numberOfRows, numberOfColumns];
             var matrixTwoDimensionsIntArray = new int[numberOfRows, numberOfColumns];
             for (int i = 0; i < numberOfRows; i++)
             {
                 for (int j = 0; j < numberOfColumns; j++)
                 {
-                    matrixOfIntigers[i, j] = int.Parse(matrixSplited[i].ElementAt(j).ToString());
+                    var elementOfStingToBeParse = matrixSplited[i][j].ToString();
+                    var numberToAddIntoMatrixOfInts= int.Parse(elementOfStingToBeParse);
+                    matrixOfIntigers[i, j] = numberToAddIntoMatrixOfInts;
                 }
             }
             return matrixOfIntigers;

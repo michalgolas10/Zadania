@@ -6,6 +6,7 @@ namespace ZadaniaRekrutacyjne.Models
 {
     public class MatrixTaskViewModel
     {
+        [IfMatrixIsCorrect]
         [IfNumberSplitedString]
         public string MatrixString { get; set; }
     }

@@ -8,5 +8,10 @@ namespace ZadaniaRekrutacyjneBLLTests.ServicesTests.FindHoleServiceTests
 {
     public class FindHoleTest
     {
+        [Fact]
+        public void Test1()
+        {
+
+        }
     }
 }
